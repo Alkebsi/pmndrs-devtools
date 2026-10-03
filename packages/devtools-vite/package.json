@@ -1,0 +1,29 @@
+{
+  "name": "@pmndrs/devtools-vite",
+  "version": "0.0.1-alpha-next27",
+  "type": "module",
+  "description": "Vite integration for PMNDRS DevTools.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@devframes/vite": "1.0.0",
+    "devframe": "1.0.0",
+    "@pmndrs/devtools-ui": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  },
+  "peerDependencies": {
+    "vite": "^7.0.0 || ^8.0.0"
+  }
+}

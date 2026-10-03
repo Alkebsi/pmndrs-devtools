@@ -1,0 +1,237 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>PMNDRS DevTools</title>
+
+    <style>
+      :root {
+        color-scheme: light dark;
+
+        --bg: #f4f4f5;
+        --surface: rgba(255, 255, 255, 0.72);
+        --surface-hover: rgba(255, 255, 255, 0.92);
+        --text: #18181b;
+        --muted: #71717a;
+        --border: rgba(24, 24, 27, 0.1);
+        --shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        --accent: #18181b;
+        --accent-text: #ffffff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b0b0f;
+          --surface: rgba(24, 24, 28, 0.72);
+          --surface-hover: rgba(31, 31, 37, 0.9);
+          --text: #f4f4f5;
+          --muted: #a1a1aa;
+          --border: rgba(255, 255, 255, 0.09);
+          --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+          --accent: #ffffff;
+          --accent-text: #111113;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background:
+          radial-gradient(
+            circle at 20% 10%,
+            rgba(120, 120, 255, 0.08),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at 80% 90%,
+            rgba(0, 200, 160, 0.06),
+            transparent 35%
+          ),
+          var(--bg);
+        color: var(--text);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          sans-serif;
+      }
+
+      main {
+        width: min(680px, 100%);
+      }
+
+      .card {
+        padding: 40px;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(32px, 6vw, 52px);
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+      }
+
+      .intro {
+        max-width: 540px;
+        margin: 18px 0 32px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .links {
+        display: grid;
+        gap: 12px;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 56px;
+        padding: 0 18px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--surface);
+        color: var(--text);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+        transition:
+          transform 140ms ease,
+          background 140ms ease,
+          border-color 140ms ease;
+      }
+
+      a:hover {
+        transform: translateY(-1px);
+        background: var(--surface-hover);
+        border-color: color-mix(in srgb, var(--text) 18%, transparent);
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--text);
+        outline-offset: 3px;
+      }
+
+      a.primary {
+        border-color: transparent;
+        background: var(--accent);
+        color: var(--accent-text);
+      }
+
+      a.primary:hover {
+        background: var(--accent);
+        border-color: transparent;
+      }
+
+      .arrow {
+        opacity: 0.55;
+        font-size: 18px;
+        transition: transform 140ms ease;
+      }
+
+      a:hover .arrow {
+        transform: translateX(3px);
+      }
+
+      footer {
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 520px) {
+        .card {
+          padding: 28px 22px;
+          border-radius: 20px;
+        }
+
+        h1 {
+          font-size: 38px;
+        }
+
+        .intro {
+          font-size: 15px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        a,
+        .arrow {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section class="card">
+        <p class="eyebrow">PMNDRS</p>
+
+        <h1>DevTools</h1>
+
+        <p class="intro">
+          A small demo environment for testing controls, performance tools,
+          local debugging, and remote DevTools workflows.
+        </p>
+
+        <nav class="links" aria-label="Demo pages">
+          <a class="primary" href="./app.html">
+            <span>Open app</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="./app.html?debug">
+            <span>Open debug mode</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="./app.html?devtools">
+            <span>Open DevTools</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </nav>
+
+        <footer>
+          The regular app runs normally. Debug mode keeps the tools in the same
+          page, while DevTools opens as a dedicated interface.
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

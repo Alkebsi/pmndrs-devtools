@@ -1,0 +1,12 @@
+{
+  "name": "@pmndrs/devtools-controls",
+  "version": "0.0.1-alpha-next7",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@pmndrs/devtools": "workspace:*"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

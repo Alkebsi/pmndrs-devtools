@@ -1,0 +1,14 @@
+{
+  "name": "@pmndrs/devtools-ui",
+  "version": "0.0.1-alpha-next27",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@pmndrs/devtools": "workspace:*",
+    "@pmndrs/devtools-controls": "workspace:*",
+    "@pmndrs/devtools-performance": "workspace:*"
+  }
+}

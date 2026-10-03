@@ -1,0 +1,21 @@
+{
+  "name": "pmndrs-devtools",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.34.5",
+  "scripts": {
+    "dev": "pnpm --filter demo dev",
+    "dev:remote": "pnpm --filter demo dev:remote",
+    "build": "pnpm -r --if-present build",
+    "format": "prettier . --write",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "happy-dom": "^20.0.0",
+    "prettier": "3.9.9",
+    "typescript": "^5.9.0",
+    "vite": "^7.3.6",
+    "vitest": "^3.2.7"
+  }
+}
